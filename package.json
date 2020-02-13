@@ -3,26 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.7",
+    "mobx-react-lite": "^1.5.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
+    "react-use": "^13.24.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build:css": "postcss tailwind.css -o src/index.css",
+    "watch:css": "postcss tailwind.css -o src/index.css -w",
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "prettier": {
+    "printWidth": 200
   },
   "browserslist": {
     "production": [
@@ -35,5 +39,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "autoprefixer": "^9.7.4",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
   }
 }
