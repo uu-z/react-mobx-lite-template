@@ -10,7 +10,7 @@ export const TodoList = () => {
     if (!todoRef?.current?.value) return;
     todo.addTodo(todoRef.current.value);
     todoRef.current.value = "";
-  }, []);
+  }, [todo]);
   return useObserver(() => (
     <div>
       <input ref={todoRef} className="border border-grey" />
@@ -23,7 +23,7 @@ export const TodoList = () => {
               margin: 10,
               opacity: t.completed ? 0.5 : 1,
               cursor: "pointer",
-              textDecoration: t.completed ? "line-through" : "none"
+              textDecoration: t.completed ? "line-through" : "none",
             }}
             key={t.id}
           >
